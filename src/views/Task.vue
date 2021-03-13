@@ -5,10 +5,11 @@
       py-4 text-left rounded shadow overflow-auto"
   >
     <div class="flex flex-col flex-grow items-start justify-between px-4">
-      <input 
-      type="text" :value="currentTask.name" 
-      class="p-2 w-full mr-2 block text-xl font-bold"
-      @change="updateTaskName($event,'name')"
+      <input
+        type="text"
+        :value="currentTask.name"
+        class="p-2 w-full mr-2 block text-xl font-bold"
+        @change="updateTaskName($event, 'name')"
       />
       <!-- $event:存储着原始DOM事件 -->
     </div>
@@ -20,7 +21,7 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      id: this.$route.params.id,
+      id: this.$route.params.id
     };
   },
   computed: {
@@ -29,18 +30,17 @@ export default {
     currentTask() {
       //this.getTask <=> return (id)=>{...}
       return this.getTask(this.id);
-    },
+    }
   },
-  methods:{
-    updateTaskName(e,property){
+  methods: {
+    updateTaskName(e, property) {
       /* e.target<=>原生的DOM */
-        this.$store.commit('UPDATE_TASK',{
-          task:this.currentTask,
-          key:property,
-          value:e.target.value
-        });
-        this.currentTask.name = e.target.value;
-       
+      this.$store.commit("UPDATE_TASK", {
+        task: this.currentTask,
+        key: property,
+        value: e.target.value
+      });
+      this.currentTask.name = e.target.value;
     }
   }
 };

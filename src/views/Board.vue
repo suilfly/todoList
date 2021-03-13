@@ -54,12 +54,17 @@
       <!-- click.self阻止事件捕获 -->
       <router-view />
     </div>
+    <plus-button />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import plusButton from "./plusButton";
 export default {
+  components: {
+    plusButton
+  },
   /* 
   当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性
     当计算属性的名称与 state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组。
@@ -71,7 +76,7 @@ export default {
     isTaskOpen() {
       /*  因为在children里设置了 name:'task' */
       return this.$route.name === "task";
-    },
+    }
   },
   methods: {
     /* 打开任务 */
@@ -96,7 +101,7 @@ export default {
     },
     moveTask(e, targetTasks, toTaskIndex) {
       if (e.target instanceof HTMLDivElement) {
-        console.dir(targetTasks)
+        console.dir(targetTasks);
         let fromColumnIndex = e.dataTransfer.getData("from-column-index");
         let fromTaskIndex = e.dataTransfer.getData("from-task-index");
         this.$store.commit("MOVE_TASK", {
@@ -114,8 +119,8 @@ export default {
     },
     removeDragClass(e) {
       e.target.classList.remove("drag-in");
-    },
-  },
+    }
+  }
 };
 </script>
 
