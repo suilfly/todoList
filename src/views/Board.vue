@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-green-50 p-4 h-full overflow-auto">
+  <div class="board-div p-4 h-full overflow-auto">
     <div class="flex flex-nowrap items-start">
       <div
-        class="bg-grey-100 p-2 mr-4 text-left shadow rounded column"
+        class="column-div p-2 mr-4 text-left shadow rounded column"
         v-for="(column, cindex) in board.columns"
         :key="cindex"
       >
@@ -54,16 +54,16 @@
       <!-- click.self阻止事件捕获 -->
       <router-view />
     </div>
-    <plus-button />
+    <!-- <plus-button /> -->
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import plusButton from "./plusButton";
+/* import plusButton from "./plusButton"; */
 export default {
   components: {
-    plusButton
+    /*     plusButton */
   },
   /* 
   当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 mapState 辅助函数帮助我们生成计算属性
@@ -133,6 +133,12 @@ export default {
 }
 .drag-in {
   background: rgba(0, 0, 0, 0.2) !important;
+}
+.board-div {
+  background: #60a3bc;
+}
+.column-div {
+  background: #f1f2f6;
 }
 /* .task {
   @apply flex items-center flex-wrap shadow mb-2 py-2 px-2 rounded bg-white text-grey-darkest no-underline;

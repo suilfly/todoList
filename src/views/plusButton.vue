@@ -1,6 +1,6 @@
 <template>
   <div id="plusButton">
-    <div @click="addColumn">+</div>
+    <div>+</div>
     <div>
       <label for="columnName"></label>
       <input type="text" id="columnName" />
