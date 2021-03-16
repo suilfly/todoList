@@ -1,25 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Board from '../views/Board';
-import Task from '../views/Task'
+import Board from "../views/Board";
+import Task from "../views/Task";
 Vue.use(VueRouter);
 
 const routes = [
- 
   {
-
-    name: 'board',
-    path: '/',
+    name: "board",
+    path: "/",
     component: Board,
     /* nest router:嵌套路由 */
-    children:[
+    children: [
       {
-        path:'task/:id',
-        component:Task,
-        name:'task'
+        path: "task/:id",
+        component: Task,
+        name: "task"
       }
     ]
-
   }
 ];
 
