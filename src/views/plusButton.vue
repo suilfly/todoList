@@ -1,10 +1,10 @@
 <template>
   <div id="plusButton">
-    <div>+</div>
-    <div>
+    <div @click="addColumn">+</div>
+    <!-- <div>
       <label for="columnName"></label>
       <input type="text" id="columnName" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -12,9 +12,10 @@
 export default {
   name: "plusButton",
   methods: {
-    /*  addColumn(){
-          this.$store.
-      } */
+    addColumn() {
+      /* this.$store.commit('CREATE_COLUMN',{  }); */
+      this.$router.push({ path: "addColumn" });
+    }
   }
 };
 </script>

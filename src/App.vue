@@ -12,7 +12,6 @@ html,
 body,
 #app {
   height: 100%;
-  background: #192a56;
 }
 input {
   outline: none;

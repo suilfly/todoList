@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Board from "../views/Board";
 import Task from "../views/Task";
+import Column from "../views/Column";
 Vue.use(VueRouter);
 
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
         path: "task/:id",
         component: Task,
         name: "task"
+      },
+      {
+        path: "addColumn",
+        component: Column,
+        name: "column"
       }
     ]
   }

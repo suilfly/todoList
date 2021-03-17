@@ -43,7 +43,7 @@ export default new Vuex.Store({
         description: ""
       });
     },
-    CREATE_COLUMN(state, { name, tasks }) {
+    CREATE_COLUMN(state, { name, tasks = [] }) {
       state.board.columns.push({ name, tasks });
     },
     MOVE_TASK(
