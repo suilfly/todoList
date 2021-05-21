@@ -2,7 +2,7 @@
 
 ## todo任务清单
 
-使用了Vuex+localStorage作为状态管理和存储。
+使用了Vuex+localStorage作为状态管理和存储
 
 使用vue-router动态路由匹配和嵌套路由实现查看详细任务描述，使用HTML5 dragAPI解决了任务拖拽以改变任务顺序。
 
